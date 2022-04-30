@@ -1,0 +1,209 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+
+}
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=tel] ,input[type=date]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=tel]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+select{
+width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+#id1
+{
+margin: 0 auto;
+color: black;
+border: solid 1px black;
+width: 30%;
+text-align: center;
+
+}
+body {
+ background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20201104/pngtree-stack-of-coins-on-pink-background-with-money-saving-concept-3d-image_460102.jpg");
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+  background-position: center;
+   background-size: cover;
+ background-color: black;
+}
+</style>
+</head>
+<body>
+<div id="id1">
+<form action="" method="post">
+  <div class="container">
+    {% csrf_token %}    
+    <h1>PAYMENT</h1>
+
+    <hr>
+
+      <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+
+  
+
+           <!-- <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="John Paul"  required>
+            <label for="ccnum">Credit card number</label>
+            <input type="tel" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"  pattern="[0-9]{16}" required>
+            <label for="expmonth">Exp Month</label>
+             <select name="expmonthr" id="exp month">
+                <option value="jan">January</option>
+                <option value="feb">February</option>
+                     <option value="mar">March</option>
+                    <option value="apr">April</option>
+                      <option value="may">May</option>
+             <option value="jun">June</option>
+                <option value="jul">July</option>
+              <option value="aug">August</option>
+                 <option value="sep">September</option>
+                   <option value="ovt">October</option>
+               <option value="nov">November</option>
+            <option value="dec">December</option>
+
+                  </select>
+               
+                <label for="expyear">Exp Year</label>
+                <select name="exp year" id="exp year">
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                     <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                      <option value="2025">2025</option>
+             <option value="2026">2026</option>
+                <option value="2027">2027</option>
+              <option value="2028">2028</option>
+                 <option value="2029">2029</option>
+                
+                  </select>
+              
+              
+                <br><label for="cvv">CVV</label>
+                <input type="tel" id="cvv" name="cvv" placeholder="352" pattern="[0-9]{3}" required>
+              
+               <label for="amount">Amount to be paid</label>
+                <input type="text" id="amount" name="amount"   value="500" readonly > -->
+
+            <label>Name on Card</label> 
+            {{form.Name_on_card}}  
+            <label>Credit card number</label>
+            {{form.Credit_card_number}}  
+            <label>Exp Month</label>
+            {{form.Exp_Month}}
+                <!-- <select name="expmonthr" id="exp month">
+                    <option value="jan">January</option>
+                    <option value="feb">February</option>
+                    <option value="mar">March</option>
+                    <option value="apr">April</option>
+                    <option value="may">May</option>
+                    <option value="jun">June</option>
+                    <option value="jul">July</option>
+                    <option value="aug">August</option>
+                    <option value="sep">September</option>
+                    <option value="ovt">October</option>
+                    <option value="nov">November</option>
+                    <option value="dec">December</option>
+                    </select> -->
+            <label>Exp Year</label>
+            {{form.Exp_Year}}
+                <!-- <select name="exp year" id="exp year">
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                   </select> -->
+            <label>CVV</label>
+            {{form.CVV}}  
+            <label>Amount to be paid</label>
+            {{form.Amount_to_be_paid}}
+
+    <hr>
+
+
+    <button type="submit" class="registerbtn">Pay</button>
+
+ 
+</form>
+{{form.errors}}
+</div>
+
+</body>
+</html>

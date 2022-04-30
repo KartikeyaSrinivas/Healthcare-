@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Using SVG as an object</title>
+    <link href="styles.css" rel="stylesheet" />
+      <style>
+          .container{
+    position: relative;
+    width: 150%;
+    background-color: #fff;
+    min-height: 100vh;
+    overflow: hidden;
+    padding:20px
+}
+.form-container{
+    position: absolute;
+    width:100%;
+    height:100%;
+    top: 2px;
+    left:0;
+}
+.container::before{
+    position:absolute;
+    height:2000px;
+    width:2000px;
+    top:-10%;
+    right:48%;
+    background-image: linear-gradient(-45deg,#20dbc2 0%,#00bfa6 100%);
+    transform: translateY(-50%);
+    border-radius:50%;
+    z-index:6;
+}
+form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding:0 5rem;
+}
+.title{
+    top:200px;
+    font-size: 2.3rem;
+    color:#444;
+    margin-bottom : 10px;
+}
+.input-field{
+    max-width: 380px;
+    height:55px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    border-radius: 55px;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+    display:grid;
+}
+.input-field i{
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    font-size: 1.5rem;
+}
+.input-field input{
+    background:none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color:#333;
+}
+.input-field input:placeholder-shown{
+    color:#aaa;
+    font-weight:500;
+}
+.btn{
+    width: 150px;
+    height: 49px;
+    outline: none;
+    border:none;
+    border-radius: 48px;
+    background-color: aquamarine;
+    color:whitesmoke;
+    text-transform: uppercase;
+    font-weight:600;
+    margin:10px 0;
+    transition: all 0.5s;
+}
+.btn.hover{
+    background-color: #00bfa6;
+}
+.social-text{
+    padding: 0.7rem 0;
+}
+.social-media{
+    display: flex;
+    justify-content: center;
+}
+.social-icon{
+    justify-content: center;
+    display: flex;
+    height:46px;
+    width:46px;
+    border:1px solid #333;
+    margin :0 0.45rem;
+    align-items: center;
+    text-decoration: double;
+    color:#333;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+.social-icon:hover{
+    color:#20dbc2;
+    border-color:#00bfa6;
+}
+.signin-signup{
+    position: absolute;
+    top:70%;
+    left: 75px;
+    transform:tranlate(-50%,-50%);
+    display:grid;
+    grid-template-columns: 1fr;
+    z-index:5;
+}
+.signin-signup,
+  .container.sign-up-mode .signin-signup {
+    left: 50%;
+  }
+form.signin-signup{
+    z-index:2;
+}
+form.signin-form{
+z-index: 1;
+}
+.image{
+    width:20%;
+    transition: transform 1.1s ease-in-out;
+    transition-delay: 0.4s;
+}
+.panels.container{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.panel{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    z-index:7;
+}
+/* .far fa-eye{
+  margin-left: -30px;
+  cursor: pointer;
+}
+.form i{
+  margin-left: -30px;
+  cursor: pointer;
+} */
+.panels-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+  }
+
+  .panel {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2.5rem 8%;
+    grid-column: 1 / 2;
+  }
+
+  .right-panel {
+    grid-row: 3 / 4;
+  }
+
+  .left-panel {
+    grid-row: 1 / 2;
+  }
+
+  .image {
+    width: 200px;
+    transition: transform 0.9s ease-in-out;
+    transition-delay: 0.6s;
+  }
+
+  .panel .content {
+    padding-right: 15%;
+    transition: transform 0.9s ease-in-out;
+    transition-delay: 0.8s;
+  }
+  .panel h3 {
+    font-size: 1.2rem;
+  }
+
+  .panel p {
+    font-size: 0.7rem;
+    padding: 0.5rem 0;
+  }
+
+  .btn.transparent {
+    width: 110px;
+    height: 35px;
+    font-size: 0.7rem;
+  }
+      </style>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+        />
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  </head>
+  <body>
+    <object data="img/forgot.svg" width="500" height="1100"> </object>
+    <div class="form-container">
+        <div class="signup-signup">
+            <form action="#" class="sign-up-form">
+                <h2 class="title">Forgot Password</h2>
+                <p>We are here to change your Password</p>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" autocomplete="email" required=""/>
+                </div>
+                <h3> Or </h3>
+                <div class="input-field">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="tel" placeholder="Phone Number" pattern="^\d{10}$" />
+                </div>
+                <input type="submit" class="btn solid" value="Submit"/>
+              </form>
+            </div>
+        </div>
+  </body>
+</html>

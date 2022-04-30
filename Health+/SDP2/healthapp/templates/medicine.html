@@ -1,0 +1,192 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.backg{
+  background-color: aqua;
+}
+.in{
+height:15%;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+
+}
+
+/* Full-width input fields */
+input[type=text]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=email]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=tel]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=date]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=email]:focus, input[type=tel]:focus, input[type=date]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+textarea {
+  background-color: #ddd;
+  outline: none;
+}
+textarea{
+  width: 100%;
+  height:70%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+#id1
+{
+margin: 0 auto;
+color: black;
+border: solid 1px black;
+width: 30%;
+text-align: center;
+
+}
+.back {
+  padding: 10px;
+  text-align: left;
+  background-color: #474e5d;
+  color: white;
+}
+body {
+ background-image: url("https://media.istockphoto.com/vectors/woman-pharmacist-at-the-counter-in-a-pharmacy-vector-id637707400");
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+  background-position: center;
+   background-size: cover;
+ background-color: black;
+ 
+}
+</style>
+
+ 
+</head>
+<body>
+  <div class="back">
+    <!-- <p><a href="new3.html">back</a></p> -->
+    <a href="{% url 'new' %}" class="w3-button w3-light-grey w3-block">Back</a>
+    </div>
+<div id="id1" class="backg">
+<form name="f1" method="post" action="">
+  <div class="container">
+    {% csrf_token %}
+    <h1>BUY MEDICINE</h1>
+
+    <hr>
+
+     <!-- Enter Name:<input type="text"  name="name" id="name" required>
+     Enter DOB:<input type="date"  name="DOB" id="DOB" required>
+     Medicine name:<input type="text"  name="Medicinename" id="Medicinename" required>
+     Mobile number:<input type="tel"  name="mobilenumber" id="mobilenumber"  pattern="[0-9]{10}" required>
+     Email :<input type="email"  name="email" id="email" required> -->
+     <label>Name  </label> 
+    {{form.name}}
+    <label>DOB  </label> 
+    {{form.DOB}}
+    <label>Medicine Name </label> 
+    {{form.Medicinename}}
+    <label>mobile number  </label> 
+    {{form.mobilenumber}}
+    <label>Email </label> 
+    {{form.email}}
+    <label>PostalCode </label>
+    {{form.Postalcode}}<br/><br/>
+     <div class="in">
+    <label>Address </label>
+    {{form.address}}
+      </div>
+
+
+
+    
+   
+
+    <hr>
+
+
+    <button type="submit" class="registerbtn" >Place Order</button>
+     <script>
+                    function checkform() {
+                     location.replace("Successful")
+                     }
+                    </script>
+
+</form>
+
+</div>
+
+</body>
+</html>

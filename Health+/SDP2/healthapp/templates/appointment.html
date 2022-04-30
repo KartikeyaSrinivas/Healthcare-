@@ -1,0 +1,132 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .backg{
+    background-color: aqua;
+  }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] ,input[type=date]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+#id1
+{
+margin: 0 auto;
+color: black;
+border: solid 1px black;
+width: 30%;
+text-align: center;
+
+}
+body {
+ background-image: url("https://image.shutterstock.com/image-photo/stethoscope-calendar-doctors-appointment-service-260nw-1043816191.jpg");
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+  background-position: center;
+   background-size: cover;
+ background-color: black;
+}
+</style>
+</head>
+<body>
+<div id="id1" class="backg">
+<form action="" method="post">
+  <div class="container">
+    {% csrf_token %}
+    <h1>MAKE AN APPOINTMENT</h1>
+
+    <hr>
+
+
+    <!-- <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    <input type="text" placeholder="Enter name" name="name" id="name" required>
+    <input type="text" placeholder="Enter Phone no." name="phonenumber" id="phonenumber" required>
+	<input type="text" placeholder="Enter gender." name="gender" id="gender" required>
+	<input type="text" placeholder="Enter hospital name" name="hospitalname" id="hospitalname" required>
+	<label for="date">Date:</label>
+  <input type="date" id="date" name="date"> -->
+
+  <label>Email  </label> 
+    {{form.email}}
+    <label>Name  </label> 
+    {{form.name}}
+    <label>phonenumber  </label> 
+    {{form.phonenumber}}
+    <label>gender  </label>
+    {{form.gender}}
+    <label>Hospital Name </label> 
+    {{form.hospitalname}}
+    <label>Date (YYYY-MM-DATE) </label>
+    {{form.date}}
+
+    <hr>
+
+
+    <button type="submit" class="registerbtn">Book Appointment</button>
+
+ 
+</form>
+</div>
+
+</body>
+</html>
+<a href="{% url 'home' %}" style="color: #2912f5;">logout</a>
+  

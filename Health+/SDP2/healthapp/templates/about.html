@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="about-section">
+  <h1>About Us </h1>
+  <h2>know more about us</h2>
+  <p>Health is Skill development project under the domain Health and Well being Systems.We include online doctor appointments which can help the organizations to streamline the workflow in a number of ways like automated email and text message reminders to send out to patients, booking individuals on a specific date prior to their scheduled appointment and also patients to save time.The patients must be registered and log in to book a doctor basing the category and the type of problem patient is facing and the location. The search results will show the list of doctors matching patients required criteria and he can select one and send a request the request will be forwarded to admin and admin forward to doctor and if he is available he will send the confirmation request back to admin the admin update the booking request and says confirmed to the patient. the patient can view the status in the status tab and also he will get the mail saying the booking is Confirmed.We used several tools such as pycharm to develop this application .</p>
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+    <a href="https://www.linkedin.com/in/kartikeya-srinivas/"><img src="{% static 'Images/Picture.jpeg' %}" alt="" style="width:100%"></a>
+      <div class="container">
+        <h2>Kartikeya</h2>
+       
+             <p>2000030198@kluniversity.in</p>
+       
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+       <a href="linkedin haesha di"><img src="{% static 'Images/harshaimage.jpeg' %}" alt="harsha" style="width:100%"></a>
+      <div class="container">
+        <h2>Harsha</h2>
+       
+        <p>2000031251@kluniversity.in</p>
+        
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

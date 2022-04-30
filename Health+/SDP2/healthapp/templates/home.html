@@ -1,0 +1,75 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+body{font-family: Arial, Helvetica, sans-serif}
+body {
+ background-image: url("https://www.centerforhealthsecurity.org/sebin/j/t/hero-600.jpg");
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+  background-position: center;
+   background-size: cover;
+ background-color: black;
+}
+
+.navbar {
+  width: 100%;
+  background-color: blue;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: red;
+}
+
+.active {
+  background-color: green;
+}
+.active1 {
+  background-color: orange;
+}
+.active2 {
+  background-color: orange;
+}
+.active3 {
+  background-color: skyblue;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+#header1{
+				background-color: orange;
+				color: black;
+				width:100%;
+				height:30px;
+				text-align: center;
+			}
+			 
+</style>
+<Body>
+<div id="header1">
+          <h1 style="font-family:georgia,garamond,serif;font-size:25px;font-style:italic;">HEALTHCARE AND WELLBEING SYSTEM </h1>
+		  </div>
+<div class="navbar">
+
+  <a href="{% url 'register' %}" class="w3-button w3-bar-item">Register</a>
+  <a href="{% url 'login' %}" class="w3-button w3-bar-item">Login</a>
+  <a href="{% url 'contact' %}" class="w3-button w3-bar-item">Contact us</a>
+  <a href="{% url 'about' %}" class="w3-button w3-bar-item">About us</a>
+</div>
+
+</body>
+</html> 
